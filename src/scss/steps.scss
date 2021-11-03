@@ -1,0 +1,340 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.steps{
+  position: relative;
+  display: none;
+  @media screen and (min-width: $tablet1) {
+    display: block;
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: $desktop1) {
+    display: block;
+    margin: 60px auto;
+  }
+  &_list{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    list-style: none;
+    margin: 0 auto;
+  }
+  &_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:last-child{
+      & .steps_item_number{
+        &:after{
+          display: none;
+        }
+      }
+    }
+    &_number{
+      position: relative;
+      font-family: 'AvenirNextCyr-Bold';
+      font-size: 18px;
+      width: 68px;
+      height: 61px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:before{
+        content: "";
+        position: absolute;
+        background: url("../img/hexagon-dark.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 56px;
+        height: 51px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        background-color: $goldDark;
+        height: 2px;
+        width: 10vw;
+        max-width: 150px;
+        top: 50%;
+        right: 5px;
+        transform: translate(90%, -50%);
+        z-index: -2;
+      }
+    }
+    &_text{
+      font-family: 'AvenirNextCyr-Medium';
+      font-size: 14px;
+      text-align: center;
+      margin-top: 12px;
+      @media screen and (min-width: $desktop1) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.steps-4{
+  & .steps_list{
+    width: 57.14%;
+  }
+  & .steps_item{
+    width: calc(25% - 5px);
+  }
+}
+
+.steps-6{
+  & .steps_list{
+    width: 85.71%;
+  }
+  & .steps_item{
+    width: calc(16.67% - 5px);
+  }
+}
+
+.steps-7{
+  & .steps_list{
+    width: 100%;
+  }
+  & .steps_item{
+    width: calc(14.28% - 5px);
+  }
+}
+
+.steps-active{
+  &-2{
+    & .steps_item{
+      &:nth-child(2){
+        & .steps_item_number{
+          &:before{
+            background: url("../img/hexagon-gold.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 68px;
+            height: 61px;
+          }
+        }
+        & .steps_item_text{
+          color: $goldNormal;
+        }
+      }
+      &:nth-child(1){
+        & .steps_item_number{
+          color: $black;
+          &:before{
+            background: url("../img/hexagon-white.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+          &:after{
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+  &-3{
+    & .steps_item{
+      &:nth-child(3){
+        & .steps_item_number{
+          &:before{
+            background: url("../img/hexagon-gold.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 68px;
+            height: 61px;
+          }
+        }
+        & .steps_item_text{
+          color: $goldNormal;
+        }
+      }
+      &:nth-child(1),
+      &:nth-child(2){
+        & .steps_item_number{
+          color: $black;
+          &:before{
+            background: url("../img/hexagon-white.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+          &:after{
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+  &-4{
+    & .steps_item{
+      &:nth-child(4){
+        & .steps_item_number{
+          &:before{
+            background: url("../img/hexagon-gold.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 68px;
+            height: 61px;
+          }
+        }
+        & .steps_item_text{
+          color: $goldNormal;
+        }
+      }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3){
+        & .steps_item_number{
+          color: $black;
+          &:before{
+            background: url("../img/hexagon-white.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+          &:after{
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+  &-5{
+    & .steps_item{
+      &:nth-child(5){
+        & .steps_item_number{
+          &:before{
+            background: url("../img/hexagon-gold.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 68px;
+            height: 61px;
+          }
+        }
+        & .steps_item_text{
+          color: $goldNormal;
+        }
+      }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4){
+        & .steps_item_number{
+          color: $black;
+          &:before{
+            background: url("../img/hexagon-white.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+          &:after{
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+  &-6{
+    & .steps_item{
+      &:nth-child(6){
+        & .steps_item_number{
+          &:before{
+            background: url("../img/hexagon-gold.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 68px;
+            height: 61px;
+          }
+        }
+        & .steps_item_text{
+          color: $goldNormal;
+        }
+      }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5){
+        & .steps_item_number{
+          color: $black;
+          &:before{
+            background: url("../img/hexagon-white.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+          &:after{
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+  &-7{
+    & .steps_item{
+      &:nth-child(7){
+        & .steps_item_number{
+          &:before{
+            background: url("../img/hexagon-gold.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 68px;
+            height: 61px;
+          }
+        }
+        & .steps_item_text{
+          color: $goldNormal;
+        }
+      }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6){
+        & .steps_item_number{
+          color: $black;
+          &:before{
+            background: url("../img/hexagon-white.svg") no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+          &:after{
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.consultation_info{
+  display: none;
+  font-size: 14px;
+  line-height: 18px;
+  color: #B0B0B0;
+}
+
+.steps-4{
+  & .consultation_info{
+    display: block;
+    margin-top: 40px;
+    @media screen and (min-width: $tablet1) {
+    }
+    @media screen and (min-width: $desktop1) {
+      margin-top: 50px;
+    }
+  }
+}
+
+.layout-result-diet{
+  & .consultation_info{
+    display: block;
+    margin-top: 40px;
+    @media screen and (min-width: $tablet1) {
+    }
+    @media screen and (min-width: $desktop1) {
+    }
+  }
+}

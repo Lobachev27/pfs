@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": "Pet Food Selector"
+})
+
+<body>
+<div class="pfs layout-2 steps-6 steps-active-2">
+
+  @@include("./components/header.html")
+
+  <div class="content">
+    <div class="container">
+      <div class="content_wrapper">
+
+        @@include("./components/steps.html", {
+          context: {
+            arr: [
+              {"number": "1", "text": "Вид питомца"},
+              {"number": "2", "text": "Вид корма"},
+              {"number": "3", "text": "Тип корма"},
+              {"number": "4", "text": "Размер питомца"},
+              {"number": "5", "text": "Возраст питомца"},
+              {"number": "6", "text": "Нужды питомца"},
+            ]
+          }
+        })
+
+        <form id="foodSortDogForm" class="stepsForm">
+          <h1 class="title">Выберите вид корма для питомца</h1>
+          <div class="option_wrapper">
+            <div class="radio_box">
+            <label class="radio">
+              <input type="radio" name="foodSortDog" value="daily" required>
+              <div class="radio_info">
+                <div class="radio_text">Повседневный</div>
+                <img class="radio_img" src="./img/dog-food-sort-1.png">
+              </div>
+            </label>
+            <label class="radio">
+              <input type="radio" name="foodSortDog" value="diet" required>
+              <div class="radio_info">
+                <div class="radio_text">Ветеринарные диеты</div>
+                <img class="radio_img" src="./img/dog-food-sort-2.png">
+              </div>
+            </label>
+          </div>
+          </div>
+          <div class="btn_box">
+            <button class="btn btn-prev" type="button">Предыдущий шаг</button>
+            <button class="btn btn-next" type="submit">Следующий шаг</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include("./shared/script.html")
+
+</body>
+</html>

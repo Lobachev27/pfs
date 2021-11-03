@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": "Pet Food Selector"
+})
+
+<body>
+<div class="pfs layout-5 steps-7 steps-active-7">
+
+  @@include("./components/header.html")
+
+  <div class="content">
+    <div class="container">
+      <div class="content_wrapper">
+
+        @@include("./components/steps.html", {
+          context: {
+            arr: [
+              {"number": "1", "text": "Вид питомца"},
+              {"number": "2", "text": "Вид корма"},
+              {"number": "3", "text": "Тип корма"},
+              {"number": "4", "text": "Размер питомца"},
+              {"number": "5", "text": "Телосложение"},
+              {"number": "6", "text": "Возраст питомца"},
+              {"number": "7", "text": "Нужды питомца"},
+            ]
+          }
+        })
+
+        <form id="specialNeedsDogForm" class="stepsForm">
+          <h1 class="title">Выберите особые потребности питомца</h1>
+          <div class="option_wrapper">
+            <div class="checkbox_box">
+            <label class="checkbox">
+              <input type="checkbox" name="specialNeedsDog1" value="digestion">
+              <div class="checkbox_text">Чувствительное пищеварение</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="specialNeedsDog2" value="sterilized">
+              <div class="checkbox_text">Стерилизован (а)</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="specialNeedsDog3" value="physical activity">
+              <div class="checkbox_text">Повышенная физическая активность</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="specialNeedsDog4" value="skin">
+              <div class="checkbox_text">Чувствительная кожа</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="specialNeedsDog5" value="active">
+              <div class="checkbox_text">Активный образ жизни</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="specialNeedsDog6" value="weight">
+              <div class="checkbox_text">Поддержание правильного веса</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="specialNeedsDog7" value="brain">
+              <div class="checkbox_text">Улучшение мозговой активности и концентрации внимания</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="specialNeedsDog8" value="no needs">
+              <div class="checkbox_text">Нет особых потребностей</div>
+            </label>
+          </div>
+          </div>
+          <div class="btn_box">
+            <button class="btn btn-prev" type="button">Предыдущий шаг</button>
+            <button class="btn btn-next" type="submit">Следующий шаг</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include("./shared/script.html")
+
+</body>
+</html>

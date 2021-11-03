@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": "Pet Food Selector"
+})
+
+<body>
+<div class="pfs layout-2 steps-7 steps-active-2">
+
+  @@include("./components/header.html")
+
+  <div class="content">
+    <div class="container">
+      <div class="content_wrapper">
+
+        @@include("./components/steps.html", {
+          context: {
+            arr: [
+              {"number": "1", "text": "Вид питомца"},
+              {"number": "2", "text": "Вид корма"},
+              {"number": "3", "text": "Возраст питомца"},
+              {"number": "4", "text": "Стерилизация"},
+              {"number": "5", "text": "Нужды питомца"},
+              {"number": "6", "text": "Тип корма"},
+              {"number": "7", "text": "Вкус корма"},
+            ]
+          }
+        })
+
+        <form id="foodSortCatForm" class="stepsForm">
+          <h1 class="title">Выберите вид корма для питомца</h1>
+          <div class="option_wrapper">
+            <div class="radio_box">
+            <label class="radio">
+              <input type="radio" name="foodSortCat" value="daily" required>
+              <div class="radio_info">
+                <div class="radio_text">Повседневный</div>
+                <img class="radio_img" src="./img/cat-food-sort-1.png">
+              </div>
+            </label>
+            <label class="radio">
+              <input type="radio" name="foodSortCat" value="diet" required>
+              <div class="radio_info">
+                <div class="radio_text">Ветеринарные диеты</div>
+                <img class="radio_img" src="./img/cat-food-sort-2.png">
+              </div>
+            </label>
+          </div>
+          </div>
+          <div class="btn_box">
+            <button class="btn btn-prev" type="button">Предыдущий шаг</button>
+            <button class="btn btn-next" type="submit">Следующий шаг</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include("./shared/script.html")
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Pet Food Selector</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/latest/normalize.css"
+    />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+  </head>
+
+  <body>
+    <div class="pfs layout-5 steps-4 steps-active-3">
+      <header class="header">
+        <div class="container">
+          <div class="header_logo">
+            <a
+              class="header_logo_link"
+              href="https://www.proplan.ru/"
+              target="_blank"
+            >
+              <img
+                class="header_logo_img"
+                src="./img/logo.svg"
+                alt="Pro Plan"
+                title="Pro Plan"
+              />
+            </a>
+          </div>
+          <div class="header_social">
+            <a
+              class="header_social_item vk"
+              href="https://vk.com/purina_proplan_group"
+              target="_blank"
+            ></a>
+            <a
+              class="header_social_item fb"
+              href="https://www.facebook.com/ProPlanRus"
+              target="_blank"
+            ></a>
+            <!--<a class="header_social_item ok" href="javascript:void(0);" target="_blank"></a>-->
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="container">
+          <div class="content_wrapper">
+            <div class="steps">
+              <ul class="steps_list">
+                <li class="steps_item">
+                  <div class="steps_item_number">1</div>
+                  <div class="steps_item_text">Вид питомца</div>
+                </li>
+
+                <li class="steps_item">
+                  <div class="steps_item_number">2</div>
+                  <div class="steps_item_text">Вид корма</div>
+                </li>
+
+                <li class="steps_item">
+                  <div class="steps_item_number">3</div>
+                  <div class="steps_item_text">Диета питомца</div>
+                </li>
+
+                <li class="steps_item">
+                  <div class="steps_item_number">4</div>
+                  <div class="steps_item_text">Тип корма</div>
+                </li>
+              </ul>
+            </div>
+
+            <form id="dietDogForm" class="stepsForm">
+              <h1 class="title">Выберите диетологическое питание</h1>
+              <div class="option_wrapper">
+                <div class="radio_box">
+                  <label class="radio">
+                    <input type="radio" name="dietDog" value="brain" />
+                    <div class="radio_text">Для поддержания функций мозга</div>
+                  </label>
+                  <label class="radio">
+                    <input
+                      type="radio"
+                      name="dietDog"
+                      value="gastrointestinal"
+                    />
+                    <div class="radio_text">При расстройствах ЖКТ</div>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="dietDog" value="liver" />
+                    <div class="radio_text">
+                      При хронической печеночной недостаточности
+                    </div>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="dietDog" value="recovery" />
+                    <div class="radio_text">В период восстановления</div>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="dietDog" value="joint" />
+                    <div class="radio_text">Для подвижности суставов</div>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="dietDog" value="urinary tract" />
+                    <div class="radio_text">
+                      При болезни нижних отделов мочевыводящих путей
+                    </div>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="dietDog" value="dermatosis" />
+                    <div class="radio_text">При дерматозах</div>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="dietDog" value="renal function" />
+                    <div class="radio_text">
+                      При хронической почечной недостаточности
+                    </div>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="dietDog" value="weight" />
+                    <div class="radio_text">
+                      Для снижения избыточной массы тела
+                    </div>
+                  </label>
+                  <label class="radio">
+                    <input
+                      type="radio"
+                      name="dietDog"
+                      value="food intolerance"
+                    />
+                    <div class="radio_text">При пищевой непереносимости</div>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="dietDog" value="probiotic" />
+                    <div class="radio_text">Кормовая добавка с пробиотиком</div>
+                  </label>
+                </div>
+              </div>
+              <div class="btn_box">
+                <button class="btn btn-prev" type="button">
+                  Предыдущий шаг
+                </button>
+                <button class="btn btn-next" type="submit">
+                  Следующий шаг
+                </button>
+              </div>
+            </form>
+            <div class="consultation_info">
+              Проконсультируйтесь с ветеринарным врачом, прежде, чем выбирать
+              диетологическое питание.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

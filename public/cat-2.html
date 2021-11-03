@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Pet Food Selector</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/latest/normalize.css"
+    />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+  </head>
+
+  <body>
+    <div class="pfs layout-2 steps-7 steps-active-2">
+      <header class="header">
+        <div class="container">
+          <div class="header_logo">
+            <a
+              class="header_logo_link"
+              href="https://www.proplan.ru/"
+              target="_blank"
+            >
+              <img
+                class="header_logo_img"
+                src="./img/logo.svg"
+                alt="Pro Plan"
+                title="Pro Plan"
+              />
+            </a>
+          </div>
+          <div class="header_social">
+            <a
+              class="header_social_item vk"
+              href="https://vk.com/purina_proplan_group"
+              target="_blank"
+            ></a>
+            <a
+              class="header_social_item fb"
+              href="https://www.facebook.com/ProPlanRus"
+              target="_blank"
+            ></a>
+            <!--<a class="header_social_item ok" href="javascript:void(0);" target="_blank"></a>-->
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="container">
+          <div class="content_wrapper">
+            <div class="steps">
+              <ul class="steps_list">
+                <li class="steps_item">
+                  <div class="steps_item_number">1</div>
+                  <div class="steps_item_text">Вид питомца</div>
+                </li>
+
+                <li class="steps_item">
+                  <div class="steps_item_number">2</div>
+                  <div class="steps_item_text">Вид корма</div>
+                </li>
+
+                <li class="steps_item">
+                  <div class="steps_item_number">3</div>
+                  <div class="steps_item_text">Возраст питомца</div>
+                </li>
+
+                <li class="steps_item">
+                  <div class="steps_item_number">4</div>
+                  <div class="steps_item_text">Стерилизация</div>
+                </li>
+
+                <li class="steps_item">
+                  <div class="steps_item_number">5</div>
+                  <div class="steps_item_text">Нужды питомца</div>
+                </li>
+
+                <li class="steps_item">
+                  <div class="steps_item_number">6</div>
+                  <div class="steps_item_text">Тип корма</div>
+                </li>
+
+                <li class="steps_item">
+                  <div class="steps_item_number">7</div>
+                  <div class="steps_item_text">Вкус корма</div>
+                </li>
+              </ul>
+            </div>
+
+            <form id="foodSortCatForm" class="stepsForm">
+              <h1 class="title">Выберите вид корма для питомца</h1>
+              <div class="option_wrapper">
+                <div class="radio_box">
+                  <label class="radio">
+                    <input
+                      type="radio"
+                      name="foodSortCat"
+                      value="daily"
+                      required
+                    />
+                    <div class="radio_info">
+                      <div class="radio_text">Повседневный</div>
+                      <img class="radio_img" src="./img/cat-food-sort-1.png" />
+                    </div>
+                  </label>
+                  <label class="radio">
+                    <input
+                      type="radio"
+                      name="foodSortCat"
+                      value="diet"
+                      required
+                    />
+                    <div class="radio_info">
+                      <div class="radio_text">Ветеринарные диеты</div>
+                      <img class="radio_img" src="./img/cat-food-sort-2.png" />
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="btn_box">
+                <button class="btn btn-prev" type="button">
+                  Предыдущий шаг
+                </button>
+                <button class="btn btn-next" type="submit">
+                  Следующий шаг
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

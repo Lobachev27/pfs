@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": "Pet Food Selector"
+})
+
+<body>
+<div class="pfs layout-main">
+
+  @@include("./components/header.html")
+
+  <div class="content">
+    <div class="container">
+      <div class="content_wrapper">
+        <div class="tab_img_box">
+          <img id="tabDog" class="active" src="./img/dog.png">
+          <img id="tabCat" src="./img/cat.png">
+        </div>
+        <form id="petTypeForm" class="stepsForm">
+          <h1 class="title title-main">Правильное питание –<br> здоровое будущее</h1>
+          <div class="box_type">
+            <div class="description description-main">Выберите своего питомца, чтобы подобрать
+              ему правильный рацион</div>
+            <div class="radio_box">
+              <label class="radio">
+                <input type="radio" name="petType" value="dog" required>
+                <div class="radio_text"></div>
+              </label>
+              <label class="radio">
+                <input type="radio" name="petType" value="cat" required>
+                <div class="radio_text"></div>
+              </label>
+            </div>
+            <div class="btn_box">
+              <!--<button class="btn btn-prev" type="button">Назад</button>-->
+              <button class="btn btn-next" type="submit">Дальше</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include("./shared/script.html")
+
+</body>
+</html>

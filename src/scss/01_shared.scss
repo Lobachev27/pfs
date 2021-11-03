@@ -1,0 +1,224 @@
+@import "partials/params";
+@import "partials/mixins";
+
+@font-face {
+  font-family: 'AvenirNextCyr-Regular';
+  src: url("../fonts/AvenirNextCyr-Regular.ttf");
+  src: local("☺"),
+  url('../fonts/AvenirNextCyr-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AvenirNextCyr-Regular.woff') format('woff'),
+  url('../fonts/AvenirNextCyr-Regular.woff2') format('woff2'),
+  url('../fonts/AvenirNextCyr-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AvenirNextCyr-Medium';
+  src: url("../fonts/AvenirNextCyr-Medium.ttf");
+  src: local("☺"),
+  url('../fonts/AvenirNextCyr-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AvenirNextCyr-Medium.woff') format('woff'),
+  url('../fonts/AvenirNextCyr-Medium.woff2') format('woff2'),
+  url('../fonts/AvenirNextCyr-Medium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AvenirNextCyr-Demi';
+  src: url("../fonts/AvenirNextCyr-Demi.ttf");
+  src: local("☺"),
+  url('../fonts/AvenirNextCyr-Demi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AvenirNextCyr-Demi.woff') format('woff'),
+  url('../fonts/AvenirNextCyr-Demi.woff2') format('woff2'),
+  url('../fonts/AvenirNextCyr-Demi.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AvenirNextCyr-Bold';
+  src: url("../fonts/AvenirNextCyr-Bold.ttf");
+  src: local("☺"),
+  url('../fonts/AvenirNextCyr-Boldeot?#iefix') format('embedded-opentype'),
+  url('../fonts/AvenirNextCyr-Bold.woff') format('woff'),
+  url('../fonts/AvenirNextCyr-Bold.woff2') format('woff2'),
+  url('../fonts/AvenirNextCyr-Bold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  font-family: 'AvenirNextCyr-Regular', sans-serif;
+  background-color: $black;
+  color: $white;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  color: $white;
+  line-height: 1.2em;
+  padding: 0;
+  margin: 0;
+}
+
+div{
+  color: $white;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+sup{
+  font-size: 0.7em;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1310px;
+  padding: 0 15px;
+  margin: 0 auto;
+  z-index: 2;
+  @media screen and (min-width: $tablet1) {
+    padding: 0 30px;
+  }
+  @media screen and (min-width: $desktop2) {
+    padding: 0;
+  }
+}
+
+.pfs{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 100vh;
+  z-index: 1;
+  &.layout-main{
+    & .content{
+      @media screen and (min-width: $desktop1) {
+        padding: 0;
+      }
+    }
+    & .content_wrapper{
+      @media screen and (min-width: $desktop1) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0;
+      }
+      & .tab_img_box{
+        @media screen and (min-width: $desktop1) {
+          order: 2;
+          height: 800px;
+          width: 50%;
+          z-index: -1;
+        }
+        @media screen and (min-width: $desktop2) {
+          height: 850px;
+        }
+      }
+      & .box_type{
+        @media screen and (min-width: $desktop1) {
+          max-width: 350px;
+        }
+      }
+    }
+  }
+  &.layout-2,
+  &.layout-3,
+  &.layout-4,
+  &.layout-5,
+  &.layout-6{
+    & .content{
+      margin-top: 40px;
+    }
+  }
+  &.layout-result{
+    & .content_wrapper{
+      margin-bottom: 0;
+    }
+  }
+}
+
+.content_wrapper{
+  margin-bottom: 40px;
+  @media screen and (min-width: $desktop1) {
+    margin-bottom: 60px;
+  }
+}
+
+.option_wrapper{
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto 0;
+  min-height: 320px;
+  @media screen and (min-width: $tablet1) {
+    min-height: 440px;
+  }
+  @media screen and (min-width: $desktop1) {
+    margin: 70px auto 0;
+    min-height: 340px;
+  }
+}
+
+.layout-2{
+  .option_wrapper{
+    @media screen and (min-width: $tablet1) {
+      justify-content: center;
+    }
+  }
+}
+.layout-3{
+  .option_wrapper{
+    @media screen and (min-width: $tablet1) {
+      justify-content: center;
+    }
+  }
+}
+.layout-4{
+  .option_wrapper{
+    justify-content: center;
+  }
+}
+.layout-5{
+  .option_wrapper{}
+}
+.layout-6{
+  .option_wrapper{
+    @media screen and (min-width: $tablet1) {
+      justify-content: center;
+    }
+  }
+}

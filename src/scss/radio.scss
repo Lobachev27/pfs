@@ -1,0 +1,586 @@
+@import "partials/params";
+@import "partials/mixins";
+
+label{
+  cursor: pointer;
+}
+
+.pfs.layout-main{
+  .radio{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    width: 112px;
+    height: 100px;
+    @media screen and (min-width: $desktop1) {
+      width: 146px;
+      height: 131px;
+    }
+    &:nth-child(2){
+      margin-left: 20px;
+      @media screen and (min-width: $desktop1) {
+        margin-left: 35px;
+      }
+    }
+    & input[value="dog"] {
+      & + .radio_text:before{
+        background: url("../img/icon-dog.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      & + .radio_text:hover:before{
+        background: url("../img/icon-dog-hover.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      &:checked + .radio_text:before {
+        background: url("../img/icon-dog-active.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    & input[value="cat"]{
+      & + .radio_text:before{
+        background: url("../img/icon-cat.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      & + .radio_text:hover:before{
+        background: url("../img/icon-cat-hover.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      &:checked + .radio_text:before {
+        background: url("../img/icon-cat-active.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    &_box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    & input {
+      position: absolute;
+      width: 112px;
+      height: 100px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: -1;
+      opacity: 0;
+      @media screen and (min-width: $desktop1) {
+        width: 146px;
+        height: 131px;
+      }
+    }
+    &_text{
+      position: relative;
+      width: 112px;
+      height: 100px;
+      cursor: pointer;
+      @media screen and (min-width: $desktop1) {
+        width: 146px;
+        height: 131px;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        border: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.pfs.layout-2{
+  .radio{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    width: 100%;
+    max-width: 415px;
+    height: 254px;
+    margin-top: 25px;
+    @media screen and (min-width: $tablet1) {
+      width: 50%;
+      height: 304px;
+      margin-top: 0;
+      margin-left: 25px;
+    }
+    @media screen and (min-width: $desktop1) {
+      height: 335px;
+    }
+    &:first-child{
+      margin-top: 0;
+      @media screen and (min-width: $tablet1) {
+        margin-left: 0;
+      }
+    }
+    &:hover{
+      & .radio_img{
+        &.gold{
+          opacity: 0;
+        }
+        &.white{
+          opacity: 1;
+        }
+      }
+    }
+    & input {
+      position: absolute;
+      width: 100%;
+      height: 254px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: -1;
+      opacity: 0;
+      @media screen and (min-width: $tablet1) {
+        height: 304px;
+      }
+      @media screen and (min-width: $desktop1) {
+        height: 335px;
+      }
+      &:checked + .radio_info{
+        border: 2px solid $white;
+        background-color: rgba(255,255,255,0.1);
+        transition: 0.3s;
+        & .radio_img.gold{
+          opacity: 0;
+        }
+        & .radio_img.white{
+          opacity: 1;
+        }
+      }
+    }
+    &_box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @media screen and (min-width: $tablet1) {
+        flex-direction: row;
+      }
+      @media screen and (min-width: $desktop1) {
+      }
+    }
+    &_info{
+      position: relative;
+      background-color: $black;
+      border-radius: 20px;
+      width: 100%;
+      height: 254px;
+      border: 2px solid $goldNormal;
+      overflow: hidden;
+      transition: 0.3s;
+      cursor: pointer;
+      z-index: -1;
+      @media screen and (min-width: $tablet1) {
+        height: 304px;
+      }
+      @media screen and (min-width: $desktop1) {
+        height: 335px;
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(#777 0,transparent 75%);
+        width: 250px;
+        height: 250px;
+        @media screen and (min-width: $tablet1) {
+          width: 320px;
+          height: 320px;
+        }
+      }
+    }
+    &_text{
+      position: relative;
+      font-family: 'AvenirNextCyr-Demi';
+      font-size: 20px;
+      text-align: center;
+      padding: 25px 20px;
+      z-index: 5;
+    }
+    &_img{
+      position: absolute;
+      width: auto;
+      max-width: 120%;
+      max-height: 100%;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      transition: 0.3s;
+      &:hover{
+        transition: 0.3s;
+      }
+      &.gold{
+        opacity: 1;
+      }
+      &.white{
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.pfs.layout-3{
+  .radio{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    width: 100%;
+    max-width: 415px;
+    height: 254px;
+    margin-top: 25px;
+    @media screen and (min-width: $tablet1) {
+      width: 33.33%;
+      height: 304px;
+      margin-top: 0;
+      margin-left: 25px;
+    }
+    @media screen and (min-width: $desktop1) {
+      height: 335px;
+    }
+    &:first-child{
+      margin-top: 0;
+      @media screen and (min-width: $tablet1) {
+        margin-left: 0;
+      }
+    }
+    &:hover{
+      & .radio_img{
+        &.gold{
+          opacity: 0;
+        }
+        &.white{
+          opacity: 1;
+        }
+      }
+    }
+    & input {
+      position: absolute;
+      width: 100%;
+      height: 254px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: -1;
+      opacity: 0;
+      @media screen and (min-width: $tablet1) {
+        height: 304px;
+      }
+      @media screen and (min-width: $desktop1) {
+        height: 335px;
+      }
+      &:checked + .radio_info{
+        border: 2px solid $white;
+        background-color: rgba(255,255,255,0.1);
+        transition: 0.3s;
+        & .radio_img.gold{
+          opacity: 0;
+        }
+        & .radio_img.white{
+          opacity: 1;
+        }
+      }
+    }
+    &_box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @media screen and (min-width: $tablet1) {
+        flex-direction: row;
+      }
+      @media screen and (min-width: $desktop1) {
+      }
+    }
+    &_info{
+      position: relative;
+      background-color: $black;
+      border-radius: 20px;
+      width: 100%;
+      height: 254px;
+      overflow: hidden;
+      border: 2px solid $goldNormal;
+      transition: 0.3s;
+      z-index: -1;
+      cursor: pointer;
+      @media screen and (min-width: $tablet1) {
+        height: 304px;
+      }
+      @media screen and (min-width: $desktop1) {
+        height: 335px;
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(#777 0,transparent 75%);
+        width: 250px;
+        height: 250px;
+        @media screen and (min-width: $tablet1) {
+          width: 320px;
+          height: 320px;
+        }
+      }
+    }
+    &_text{
+      position: relative;
+      font-family: 'AvenirNextCyr-Demi';
+      font-size: 20px;
+      text-align: center;
+      padding: 25px 20px;
+      z-index: 5;
+    }
+    &_img{
+      position: absolute;
+      width: auto;
+      max-width: 120%;
+      max-height: 100%;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      transition: 0.3s;
+      &:hover{
+        transition: 0.3s;
+      }
+      &.gold{
+        opacity: 1;
+      }
+      &.white{
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.pfs.layout-4{
+  .radio{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 105px;
+    height: 80px;
+    margin-top: 25px;
+    @media screen and (min-width: $tablet1) {
+      margin-top: 0;
+      margin-left: 130px;
+    }
+    @media screen and (min-width: $desktop1) {
+      margin-left: 170px;
+    }
+    &:first-child{
+      margin-top: 0;
+      @media screen and (min-width: $tablet1) {
+        margin-left: 0;
+      }
+    }
+    & input {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: -1;
+      opacity: 0;
+      &:checked + .radio_text:before{
+        border: 2px solid $white;
+        background-color: $white;
+        transition: 0.3s;
+      }
+      &:checked ~ .radio_text:after {
+        opacity: 1;
+        transition: 0.3s;
+      }
+    }
+    &_box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @media screen and (min-width: $tablet1) {
+        flex-direction: row;
+      }
+      @media screen and (min-width: $desktop1) {
+      }
+    }
+    &_text{
+      position: relative;
+      font-size: 20px;
+      text-align: left;
+      padding: 9px 0 9px 67px;
+      width: 100%;
+      cursor: pointer;
+      z-index: 5;
+      &:before{
+        content: '';
+        position: absolute;
+        border: 2px solid $goldNormal;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        transition: all 0.3s;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background-color: $black;
+        border-radius: 50%;
+        top: 13px;
+        left: 13px;
+        opacity: 0;
+        z-index: 2;
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+.pfs.layout-5{
+  .radio{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    @media screen and (min-width: $tablet1) {
+      width: calc(50% - 20px);
+      margin-top: 30px;
+    }
+    @media screen and (min-width: $desktop1) {
+      width: calc(33.33% - 20px);
+      margin-left: 30px;
+    }
+    &:first-child{
+      margin-top: 0;
+    }
+    &:nth-child(2){
+      @media screen and (min-width: $tablet1) {
+        margin-top: 0;
+      }
+    }
+    &:nth-child(3){
+      @media screen and (min-width: $desktop1) {
+        margin-top: 0;
+      }
+    }
+    &:nth-child(3n-2){
+      @media screen and (min-width: $desktop1) {
+        margin-left: 0;
+      }
+    }
+    & input {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: -1;
+      opacity: 0;
+      @media screen and (min-width: $tablet1) {
+        width: 40px;
+        height: 40px;
+      }
+      &:checked + .radio_text:before{
+        border: 2px solid $white;
+        background-color: $white;
+        transition: 0.3s;
+      }
+      &:checked ~ .radio_text:after {
+        opacity: 1;
+        transition: 0.3s;
+      }
+    }
+    &_box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @media screen and (min-width: $tablet1) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      @media screen and (min-width: $desktop1) {
+        justify-content: flex-start;
+      }
+    }
+    &_text{
+      position: relative;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: left;
+      padding: 7px 0 7px 52px;
+      width: 100%;
+      cursor: pointer;
+      z-index: 5;
+      @media screen and (min-width: $tablet1) {
+        font-size: 18px;
+        line-height: 28px;
+        padding: 6px 0 6px 57px;
+      }
+      @media screen and (min-width: $desktop1) {
+        font-size: 20px;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        border: 2px solid $goldNormal;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        width: 36px;
+        height: 36px;
+        background-color: transparent;
+        transition: all 0.3s;
+        @media screen and (min-width: $tablet1) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background-color: $black;
+        border-radius: 50%;
+        top: 12px;
+        left: 12px;
+        opacity: 0;
+        z-index: 2;
+        transition: 0.3s;
+        @media screen and (min-width: $tablet1) {
+          top: 14px;
+          left: 14px;
+        }
+      }
+    }
+  }
+}

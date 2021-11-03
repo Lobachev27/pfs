@@ -1,0 +1,406 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.result{
+  &Form{
+    position: relative;
+    & .swiper-button-next,
+    & .swiper-button-prev{
+      position: absolute;
+      display: block;
+      transform: translateY(50%);
+      top: 50%;
+      width: 15px;
+      height: 26px;
+      outline: none;
+      transition: all 0.3s;
+      opacity: 0.5;
+      &:hover{
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      @media screen and (min-width: $tablet1) {
+        width: 18px;
+        height: 28px;
+      }
+      &[aria-disabled = true]{
+        display: none;
+      }
+    }
+    & .swiper-button-prev{
+      background: url("../img/angle.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      transform: rotate(180deg) translateY(-40%);
+      left: 15px;
+      @media screen and (min-width: $tablet1) {
+        left: 7px;
+      }
+      @media screen and (min-width: $desktop2) {
+        left: -35px;
+      }
+    }
+    & .swiper-button-next{
+      background: url("../img/angle.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      right: 15px;
+      @media screen and (min-width: $tablet1) {
+        right: 7px;
+      }
+      @media screen and (min-width: $desktop2) {
+        right: -35px;
+      }
+    }
+    & .swiper-container-horizontal>.swiper-pagination-bullets{
+      position: absolute;
+      bottom: 0;
+      line-height: 1em;
+      text-align: center;
+      height: 14px;
+      padding: 0 15px;
+      &.disabled{
+        display: none;
+      }
+    }
+    & .swiper-container-horizontal .swiper-pagination-bullet {
+      position: relative;
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: $goldNormal;
+      outline: none;
+      transition: 0.3s;
+      opacity: 0.4;
+      margin: 0 7px;
+    }
+    & .swiper-container-horizontal .swiper-pagination-bullet-active {
+      opacity: 1;
+      transition: 0.3s;
+    }
+  }
+  &_top{
+    padding-bottom: 40px;
+    & .swiper-container{
+      position: relative;
+      width: 100%;
+      margin-top: 40px;
+      padding-bottom: 50px;
+    }
+    & .swiper-wrapper{
+      &.disabled{
+        transform: none !important;
+        display: flex;
+        justify-content: center;
+        & .swiper-slide{
+          &:last-child{
+            margin-right: 0 !important;
+          }
+        }
+      }
+    }
+    & .swiper-slide{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+  &_bottom{
+    background-color: #464648;
+    padding: 40px 0;
+    & .swiper-container{
+      position: relative;
+      width: 100%;
+      margin-top: 40px;
+      padding-bottom: 50px;
+    }
+    & .swiper-wrapper{
+      &.disabled{
+        transform: none !important;
+        display: flex;
+        justify-content: center;
+        & .swiper-slide{
+          &:last-child{
+            margin-right: 0 !important;
+          }
+        }
+      }
+    }
+    & .swiper-slide{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    & .product_box{
+      background-color: transparent;
+      border: none;
+      &:hover{
+        background-color: transparent;
+        & .product_name,
+        & .product_size,
+        & .product_price,
+        & .product_info{
+          color: $white;
+        }
+        & .btn-basket{
+          background-color: $goldNormal;
+          border: 1px solid $goldNormal;
+          &:hover{
+            background-color: $white;
+            border: 1px solid $white;
+          }
+        }
+      }
+      &.buy{
+        & .btn-basket{
+          &:hover{
+            background-color: $white;
+            border: 1px solid $white;
+          }
+        }
+        &:hover{
+          & .btn-basket{
+            background-color: $goldNormal;
+            border: 1px solid $goldNormal;
+            &:hover{
+              background-color: $goldNormal;
+              border: 1px solid $goldNormal;
+            }
+          }
+          & .product_minus,
+          & .product_plus{
+            background-color: $white;
+          }
+        }
+      }
+    }
+    & .product_img_wrapper{
+      @media screen and (min-width: $tablet1) {
+        height: 200px;
+      }
+      @media screen and (min-width: $desktop1) {
+        height: 220px;
+      }
+      &:before{
+        display: none;
+      }
+    }
+    & .product_name{
+      @media screen and (min-width: $tablet1) {
+        min-height: 140px;
+      }
+    }
+  }
+  &_basket{
+    background-color: $goldNormal;
+    padding: 40px 0;
+    &_box{
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    &_row{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 30px;
+    }
+    &_text{
+      font-family: 'AvenirNextCyr-Regular';
+      font-size: 18px;
+      line-height: 20px;
+      /*text-align: left;
+      min-width: 100px;*/
+      color: $black;
+      &.bold{
+        font-family: 'AvenirNextCyr-Bold';
+        font-size: 26px;
+        line-height: 26px;
+      }
+    }
+  }
+}
+
+.product{
+  &_box{
+    position: relative;
+    overflow: hidden;
+    border: 2px solid $goldNormal;
+    background-color: $black;
+    border-radius: 20px;
+    max-width: 280px;
+    padding: 20px;
+    transition: 0.5s;
+    @media screen and (min-width: $tablet1) {
+      max-width: 100%;
+      padding: 30px 20px;
+    }
+    &:hover{
+      background-color: $goldNormal;
+      transition: 0.5s;
+      & .product_name,
+      & .product_size,
+      & .product_price,
+      & .product_info{
+        color: $black;
+        transition: 0.3s;
+      }
+      & .btn-basket{
+        background-color: $goldLight;
+        border: 1px solid $goldLight;
+      }
+    }
+    &.buy{
+      & .btn-basket{
+        font-family: 'AvenirNextCyr-Bold';
+        cursor: default;
+        &:hover{
+          background-color: $goldNormal;
+          border: 1px solid $goldNormal;
+        }
+      }
+      &:hover{
+        & .btn-basket{
+          background-color: $goldLight;
+          border: 1px solid $goldLight;
+          &:hover{
+            background-color: $goldLight;
+            border: 1px solid $goldLight;
+          }
+        }
+        & .product_minus,
+        & .product_plus{
+          background-color: $goldNormal;
+          transition: 0.3s;
+        }
+      }
+      & .product_minus,
+      & .product_plus{
+        display: flex;
+      }
+    }
+    &.missing{
+      & .product_more{
+        display: none;
+      }
+      & .product_info{
+        display: flex;
+      }
+    }
+  }
+  &_img{
+    position: absolute;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &_wrapper{
+      position: relative;
+      width: 100%;
+      height: 180px;
+      @media screen and (min-width: $tablet1) {
+        height: 260px;
+      }
+      @media screen and (min-width: $desktop1) {
+        height: 320px;
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(#777 0,transparent 75%);
+        width: 250px;
+        height: 250px;
+        @media screen and (min-width: $tablet1) {
+          width: 320px;
+          height: 320px;
+        }
+      }
+    }
+  }
+  &_name{
+    font-size: 16px;
+    line-height: 20px;
+    min-height: 100px;
+    overflow: hidden;
+    color: $white;
+    text-align: center;
+    margin-top: 20px;
+  }
+  &_size{
+    font-size: 16px;
+    line-height: 20px;
+    color: $white;
+    text-align: center;
+    margin-top: 10px;
+  }
+  &_more{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    @media screen and (min-width: $tablet1) {
+      flex-direction: column;
+    }
+  }
+  &_price{
+    font-family: 'AvenirNextCyr-Bold';
+    font-size: 22px;
+    @media screen and (min-width: $tablet1) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+  &_btn{
+    position: relative;
+    width: 140px;
+    @media screen and (min-width: $tablet1) {
+      width: 100%;
+      max-width: 220px;
+    }
+  }
+  &_minus,
+  &_plus{
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-family: 'AvenirNextCyr-Bold';
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    z-index: 5;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  &_minus{
+    top: 4px;
+    left: 4px;
+  }
+  &_plus{
+    top: 4px;
+    right: 4px;
+  }
+  &_info{
+    display: none;
+    font-family: 'AvenirNextCyr-Medium';
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    height: 40px;
+    margin-top: 20px;
+    @media screen and (min-width: $tablet1) {
+      height: 87px;
+    }
+  }
+}

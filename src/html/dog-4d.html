@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": "Pet Food Selector"
+})
+
+<body>
+<div class="pfs layout-3 steps-4 steps-active-4">
+
+  @@include("./components/header.html")
+
+  <div class="content">
+    <div class="container">
+      <div class="content_wrapper">
+
+        @@include("./components/steps.html", {
+          context: {
+            arr: [
+              {"number": "1", "text": "Вид питомца"},
+              {"number": "2", "text": "Вид корма"},
+              {"number": "3", "text": "Диета питомца"},
+              {"number": "4", "text": "Тип корма"},
+            ]
+          }
+        })
+
+        <form id="foodTypeDietDogForm" class="stepsForm">
+          <h1 class="title">Выберите тип корма для питомца</h1>
+          <div class="option_wrapper">
+            <div class="radio_box">
+            <label class="radio">
+              <input type="radio" name="foodTypeDietDog" value="dry" required>
+              <div class="radio_info">
+                <div class="radio_text">Сухой</div>
+                <img class="radio_img" src="./img/dog-food-type-4.png">
+              </div>
+            </label>
+            <label class="radio">
+              <input type="radio" name="foodTypeDietDog" value="wet" required>
+              <div class="radio_info">
+                <div class="radio_text">Влажный</div>
+                <img class="radio_img" src="./img/dog-food-type-5.png">
+              </div>
+            </label>
+            <label class="radio">
+              <input type="radio" name="foodTypeDietDog" value="probiotic" required>
+              <div class="radio_info">
+                <div class="radio_text">Кормовая добавка с пробиотиком</div>
+                <img class="radio_img" src="./img/dog-food-type-6.png">
+              </div>
+            </label>
+          </div>
+          </div>
+          <div class="btn_box">
+            <button class="btn btn-prev" type="button">Предыдущий шаг</button>
+            <button class="btn btn-next" type="submit">Следующий шаг</button>
+          </div>
+        </form>
+        <div class="consultation_info">Проконсультируйтесь с ветеринарным врачом, прежде, чем выбирать диетологическое питание.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include("./shared/script.html")
+
+</body>
+</html>

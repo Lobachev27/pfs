@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": "Pet Food Selector"
+})
+
+<body>
+<div class="pfs layout-3 steps-6 steps-active-5">
+
+  @@include("./components/header.html")
+
+  <div class="content">
+    <div class="container">
+      <div class="content_wrapper">
+
+        @@include("./components/steps.html", {
+          context: {
+            arr: [
+              {"number": "1", "text": "Вид питомца"},
+              {"number": "2", "text": "Вид корма"},
+              {"number": "3", "text": "Тип корма"},
+              {"number": "4", "text": "Размер питомца"},
+              {"number": "5", "text": "Возраст питомца"},
+              {"number": "6", "text": "Нужды питомца"},
+            ]
+          }
+        })
+
+        <form id="ageDogSmallForm" class="stepsForm">
+          <h1 class="title">Выберите возраст питомца</h1>
+          <div class="option_wrapper">
+            <div class="radio_box">
+            <label class="radio">
+              <input type="radio" name="ageDogSmall" value="up to 1" required>
+              <div class="radio_info">
+                <div class="radio_text">До 1 года</div>
+                <img class="radio_img" src="./img/dog-age-1.png">
+              </div>
+            </label>
+            <label class="radio">
+              <input type="radio" name="ageDogSmall" value="from 1 to 7" required>
+              <div class="radio_info">
+                <div class="radio_text">От 1 до 7 лет</div>
+                <img class="radio_img" src="./img/dog-age-2.png">
+              </div>
+            </label>
+            <label class="radio">
+              <input type="radio" name="ageDogSmall" value="more 7" required>
+              <div class="radio_info">
+                <div class="radio_text">Более 7 лет</div>
+                <img class="radio_img" src="./img/dog-age-3.png">
+              </div>
+            </label>
+          </div>
+          </div>
+          <div class="btn_box">
+            <button class="btn btn-prev" type="button">Предыдущий шаг</button>
+            <button class="btn btn-next" type="submit">Следующий шаг</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include("./shared/script.html")
+
+</body>
+</html>

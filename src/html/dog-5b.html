@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": "Pet Food Selector"
+})
+
+<body>
+<div class="pfs layout-2 steps-7 steps-active-5">
+
+  @@include("./components/header.html")
+
+  <div class="content">
+    <div class="container">
+      <div class="content_wrapper">
+
+        @@include("./components/steps.html", {
+          context: {
+            arr: [
+              {"number": "1", "text": "Вид питомца"},
+              {"number": "2", "text": "Вид корма"},
+              {"number": "3", "text": "Тип корма"},
+              {"number": "4", "text": "Размер питомца"},
+              {"number": "5", "text": "Телосложение"},
+              {"number": "6", "text": "Возраст питомца"},
+              {"number": "7", "text": "Нужды питомца"},
+            ]
+          }
+        })
+
+        <form id="BodyTypeDogForm" class="stepsForm">
+          <h1 class="title">Выберите телосложение питомца</h1>
+          <div class="option_wrapper">
+            <div class="radio_box">
+            <label class="radio">
+              <input type="radio" name="bodyTypeDog" value="athletic" required>
+              <div class="radio_info">
+                <div class="radio_text">Атлетическое</div>
+                <img class="radio_img gold" src="./img/dog-body-type-1.png">
+                <img class="radio_img white" src="./img/dog-body-type-active-1.png">
+              </div>
+            </label>
+            <label class="radio">
+              <input type="radio" name="bodyTypeDog" value="powerful" required>
+              <div class="radio_info">
+                <div class="radio_text">Мощное</div>
+                <img class="radio_img gold" src="./img/dog-body-type-2.png">
+                <img class="radio_img white" src="./img/dog-body-type-active-2.png">
+              </div>
+            </label>
+          </div>
+          </div>
+          <div class="btn_box">
+            <button class="btn btn-prev" type="button">Предыдущий шаг</button>
+            <button class="btn btn-next" type="submit">Следующий шаг</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include("./shared/script.html")
+
+</body>
+</html>

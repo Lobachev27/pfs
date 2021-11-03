@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": "Pet Food Selector"
+})
+
+<body>
+<div class="pfs layout-6 steps-7 steps-active-7">
+
+  @@include("./components/header.html")
+
+  <div class="content">
+    <div class="container">
+      <div class="content_wrapper">
+
+        @@include("./components/steps.html", {
+          context: {
+            arr: [
+              {"number": "1", "text": "Вид питомца"},
+              {"number": "2", "text": "Вид корма"},
+              {"number": "3", "text": "Возраст питомца"},
+              {"number": "4", "text": "Стерилизация"},
+              {"number": "5", "text": "Нужды питомца"},
+              {"number": "6", "text": "Тип корма"},
+              {"number": "7", "text": "Вкус корма"},
+            ]
+          }
+        })
+
+        <form id="foodTasteCatForm" class="stepsForm">
+          <h1 class="title">Выберите вкус корма</h1>
+          <div class="option_wrapper">
+            <div class="checkbox_box">
+            <label class="checkbox">
+              <input type="checkbox" name="foodTasteCat1" value="turkey">
+              <div class="checkbox_text">Индейка</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="foodTasteCat2" value="chicken">
+              <div class="checkbox_text">Курица</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="foodTasteCat3" value="rabbit">
+              <div class="checkbox_text">Кролик</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="foodTasteCat4" value="salmon">
+              <div class="checkbox_text">Лосось</div>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="foodTasteCat5" value="lamb">
+              <div class="checkbox_text">Ягненок</div>
+            </label>
+          </div>
+          </div>
+          <div class="btn_box">
+            <button class="btn btn-prev" type="button">Предыдущий шаг</button>
+            <button class="btn btn-next" type="submit">Следующий шаг</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include("./shared/script.html")
+
+</body>
+</html>

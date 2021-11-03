@@ -1,0 +1,74 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'AvenirNextCyr-Medium';
+  font-size: 18px;
+  border-radius: 50px;
+  border: 1px solid $goldNormal;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  max-width: 300px;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover{
+    background-color: $white;
+    border: 1px solid $white;
+    color: $black;
+    transition: 0.3s;
+  }
+  &-prev{
+    background-color: $black;
+    color: $goldNormal;
+  }
+  &-next{
+    background-color: $goldNormal;
+    &[disabled]{
+      border: 1px solid #fff;
+      background-color: #fff;
+      color: #999;
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+  &-basket{
+    font-size: 16px;
+    height: 40px;
+    background-color: $goldNormal;
+  }
+  &-buy{
+    border: 1px solid $goldLight;
+    background-color: $goldLight;
+    &[disabled]{
+      border: 1px solid #b3b3b3;
+      background-color: #b3b3b3;
+      color: #999;
+      cursor: default;
+    }
+  }
+  &:nth-child(2){
+    margin-top: 20px;
+    @media screen and (min-width: $tablet1) {
+      margin-top: 0;
+      margin-left: 25px;
+    }
+  }
+  &_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    @media screen and (min-width: $tablet1) {
+      margin-top: 50px;
+      flex-direction: row;
+    }
+    @media screen and (min-width: $desktop1) {
+      margin-top: 70px;
+    }
+  }
+}

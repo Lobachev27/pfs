@@ -1,0 +1,51 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.title{
+  font-family: 'AvenirNextCyr-Demi';
+  font-size: 22px;
+  text-align: center;
+  line-height: 30px;
+  @media screen and (min-width: $tablet1) {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  &-main{
+    font-family: 'AvenirNextCyr-Bold';
+    text-transform: uppercase;
+    margin-top: 10px;
+    @media screen and (min-width: $tablet1) {
+      margin-top: 20px;
+    }
+    @media screen and (min-width: $desktop1) {
+      text-align: left;
+      margin-top: 0;
+    }
+    @media screen and (min-width: $desktop2) {
+      font-size: 49px;
+      line-height: 70px;
+    }
+  }
+}
+
+.description{
+  text-align: center;
+  &-main{
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 500px;
+    margin: 10px auto 40px;
+    @media screen and (min-width: $tablet1) {
+      font-size: 20px;
+      line-height: 28px;
+      margin: 30px auto 40px;
+    }
+    @media screen and (min-width: $desktop1) {
+      text-align: left;
+      margin: 70px auto 50px;
+    }
+    @media screen and (min-width: $desktop2) {
+      margin: 100px auto 60px;
+    }
+  }
+}

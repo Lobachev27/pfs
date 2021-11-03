@@ -1,0 +1,10 @@
+<div class="steps">
+  <ul class="steps_list">
+    @@for (var i = 0; i < context.arr.length; i++) {
+    <li class="steps_item">
+      <div class="steps_item_number">`+context.arr[i].number+`</div>
+      <div class="steps_item_text">`+context.arr[i].text+`</div>
+    </li>
+    }
+  </ul>
+</div>

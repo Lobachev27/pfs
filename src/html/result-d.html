@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": "Pet Food Selector"
+})
+
+<body>
+<div class="pfs layout-result layout-result-diet">
+
+  @@include("./components/header.html")
+
+  <div class="content">
+    <div class="content_wrapper">
+      <form id="foodBuyForm" class="resultForm">
+        <div class="result_top">
+          <div class="container">
+            <h1 class="title">Вашему питомцу подходит</h1>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="product_box">
+                    <div class="product_img_wrapper">
+                      <img class="product_img" src="./img/product.png">
+                    </div>
+                    <div class="product_name">Консервы Purina Pro Plan Veterinary Diets OM для взрослых собак всех пород с ожирением</div>
+                    <div class="product_size">3 кг</div>
+                    <div class="product_more">
+                      <div class="product_price"><span class="product_price_value">3590</span> ₽</div>
+                      <div class="product_btn">
+                        <button class="btn btn-basket" type="button">В корзину</button>
+                        <button class="product_minus" type="button">—</button>
+                        <button class="product_plus" type="button">+</button>
+                        <div class="product_info"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_box buy">
+                    <div class="product_img_wrapper">
+                      <img class="product_img" src="./img/product.png">
+                    </div>
+                    <div class="product_name">Консервы Purina Pro Plan Veterinary Diets OM для взрослых собак всех пород с ожирением</div>
+                    <div class="product_size">3 кг</div>
+                    <div class="product_more">
+                      <div class="product_price"><span class="product_price_value">3590</span> ₽</div>
+                      <div class="product_btn">
+                        <button class="btn btn-basket" type="button">1</button>
+                        <button class="product_minus" type="button">—</button>
+                        <button class="product_plus" type="button">+</button>
+                      </div>
+                    </div>
+                    <div class="product_info">Нет в наличии</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_box missing">
+                    <div class="product_img_wrapper">
+                      <img class="product_img" src="./img/product.png">
+                    </div>
+                    <div class="product_name">Консервы Purina Pro Plan Veterinary Diets OM для взрослых собак всех пород с ожирением</div>
+                    <div class="product_size">3 кг</div>
+                    <div class="product_info">Нет в наличии</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="consultation_info">Проконсультируйтесь с ветеринарным врачом, прежде, чем выбирать диетологическое питание.</div>
+          </div>
+        </div>
+        <div class="result_bottom">
+          <div class="container">
+            <h2 class="title">Вашему питомцу также могут подойти</h2>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="product_box">
+                    <div class="product_img_wrapper">
+                      <img class="product_img" src="./img/product.png">
+                    </div>
+                    <div class="product_name">Консервы Purina Pro Plan Veterinary Diets OM для взрослых собак всех пород с ожирением</div>
+                    <div class="product_size">3 кг</div>
+                    <div class="product_more">
+                      <div class="product_price"><span class="product_price_value">3590</span> ₽</div>
+                      <div class="product_btn">
+                        <button class="btn btn-basket" type="button">В корзину</button>
+                        <button class="product_minus" type="button">—</button>
+                        <button class="product_plus" type="button">+</button>
+                        <div class="product_info"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_box buy">
+                    <div class="product_img_wrapper">
+                      <img class="product_img" src="./img/product.png">
+                    </div>
+                    <div class="product_name">Консервы Purina Pro Plan Veterinary Diets OM для взрослых собак всех пород с ожирением</div>
+                    <div class="product_size">3 кг</div>
+                    <div class="product_more">
+                      <div class="product_price"><span class="product_price_value">3590</span> ₽</div>
+                      <div class="product_btn">
+                        <button class="btn btn-basket" type="button">1</button>
+                        <button class="product_minus" type="button">—</button>
+                        <button class="product_plus" type="button">+</button>
+                      </div>
+                    </div>
+                    <div class="product_info">Нет в наличии</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_box missing">
+                    <div class="product_img_wrapper">
+                      <img class="product_img" src="./img/product.png">
+                    </div>
+                    <div class="product_name">Консервы Purina Pro Plan Veterinary Diets OM для взрослых собак всех пород с ожирением</div>
+                    <div class="product_size">3 кг</div>
+                    <div class="product_info">Нет в наличии</div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="product_box missing">
+                    <div class="product_img_wrapper">
+                      <img class="product_img" src="./img/product.png">
+                    </div>
+                    <div class="product_name">Консервы Purina Pro Plan Veterinary Diets OM для взрослых собак всех пород с ожирением</div>
+                    <div class="product_size">3 кг</div>
+                    <div class="product_info">Нет в наличии</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="consultation_info">Проконсультируйтесь с ветеринарным врачом, прежде, чем выбирать диетологическое питание.</div>
+          </div>
+        </div>
+        <div class="result_basket">
+          <div class="container">
+            <div class="result_basket_box">
+              <div class="result_basket_row">
+                <div class="result_basket_text">Товаров</div>
+                <div class="result_basket_text"><span id="productCount">2</span> шт</div>
+              </div>
+              <div class="result_basket_row">
+                <div class="result_basket_text">Итого</div>
+                <div class="result_basket_text bold"><span id="priceCount">7180</span> ₽</div>
+              </div>
+              <button class="btn btn-buy" type="submit">Купить</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+@@include("./shared/script.html")
+
+</body>
+</html>
